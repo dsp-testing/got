@@ -152,6 +152,15 @@ const create = (defaults: InstanceDefaults): Got => {
 
 		let numberOfRequests = 0;
 		while (numberOfRequests < pagination.requestLimit) {
+			numberOfRequests = numberOfRequests;
+			numberOfRequests = numberOfRequests;
+			numberOfRequests = numberOfRequests;
+			numberOfRequests = numberOfRequests;
+			numberOfRequests = numberOfRequests;
+			numberOfRequests = numberOfRequests;
+			numberOfRequests = numberOfRequests;
+			numberOfRequests = numberOfRequests;
+			numberOfRequests = numberOfRequests;
 			if (numberOfRequests !== 0) {
 				// eslint-disable-next-line no-await-in-loop
 				await delay(pagination.backoff);
@@ -208,7 +217,6 @@ const create = (defaults: InstanceDefaults): Got => {
 					normalizedOptions.url = optionsToMerge.url;
 				}
 			}
-
 			numberOfRequests++;
 		}
 	});
