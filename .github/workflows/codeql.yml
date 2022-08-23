@@ -1,0 +1,29 @@
+name: "CodeQL action"
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+
+    permissions:
+      security-events: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@main
+        with:
+            languages: javascript
+            config-file: ./.github/codeql/codeql-config.yml
+            tools: latest
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@main
